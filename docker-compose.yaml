@@ -1,21 +1,23 @@
+version: '3.8' 
 
-version: '3'
 services:
-  flask_book:
-    build: .
+  bookstore-api:
+    build: .  # Build the image from the current directory (./)
     ports:
-      - "80:80"
+      - "80:80"  
     environment:
-      - MYSQL_HOST=18.209.67.186
-      - MYSQL_USER=kenny
-      - MYSQL_PASSWORD=1234567879
-      - MYSQL_DB=bookstore_db
+      MYSQL_HOST: 3.86.253.212
+      MYSQL_USER: kenny  
+      MYSQL_PASSWORD: 123456789  
+      MYSQL_DB: bookstore_db 
     depends_on:
-      - mysql
+      - mysql  # Wait for the mysql service to be ready
 
   mysql:
-    image: mysql:5.7
+    image: mysql:8.0  
     environment:
-      MYSQL_DATABASE: bookstore_db
-      MYSQL_USER: kenny
-      MYSQL_PASSWORD: 123456789
+      MYSQL_ROOT_PASSWORD: 123456789  # Set the MySQL root password
+      MYSQL_DATABASE: bookstore_db  
+
+volumes:
+  mysql-data:  
