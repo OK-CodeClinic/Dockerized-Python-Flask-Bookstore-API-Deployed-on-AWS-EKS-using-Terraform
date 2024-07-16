@@ -1,0 +1,21 @@
+
+version: '3'
+services:
+  flask_book:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      - MYSQL_HOST=18.209.67.186
+      - MYSQL_USER=kenny
+      - MYSQL_PASSWORD=1234567879
+      - MYSQL_DB=bookstore_db
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: bookstore_db
+      MYSQL_USER: kenny
+      MYSQL_PASSWORD: 123456789
