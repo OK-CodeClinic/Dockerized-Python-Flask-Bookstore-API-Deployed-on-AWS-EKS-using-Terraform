@@ -5,11 +5,12 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 
 # Configure MySQL database connection
-app.config['MYSQL_HOST'] = 'book-store-rds.c9cysu6e2wtc.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_HOST'] = '18.209.67.186'
 app.config['MYSQL_USER'] = 'kenny'
-app.config['MYSQL_PASSWORD'] = '2INZKAGjuBPubaGHzTKK'
+app.config['MYSQL_PASSWORD'] = '123456789'
 app.config['MYSQL_DB'] = 'bookstore_db'
 app.config['MYSQL_PORT'] = 3306
+
 
 # Initialize MySQL
 mysql = MySQL(app)
