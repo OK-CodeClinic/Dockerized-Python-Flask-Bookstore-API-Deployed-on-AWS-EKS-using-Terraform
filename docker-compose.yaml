@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"  
     environment:
-      MYSQL_HOST: 3.86.253.212
+      MYSQL_HOST: 13.37.215.2
       MYSQL_USER: kenny  
       MYSQL_PASSWORD: 123456789  
       MYSQL_DB: bookstore_db 
